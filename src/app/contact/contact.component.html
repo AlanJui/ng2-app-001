@@ -1,0 +1,192 @@
+<!--<h2>Contact Reactive Form</h2>-->
+
+<!--<form (ngSubmit)="submitForm()" novalidate>-->
+  <!--<div class="form-content">-->
+    <!--<label>-->
+      <!--Name:-->
+      <!--<input type="text" [(ngModel)]="name"-->
+             <!--class="sd-form-control" placeholder="Enter your name.">-->
+    <!--</label>-->
+    <!--<label>-->
+      <!--Email:-->
+      <!--<input type="email" [(ngModel)]="email"-->
+             <!--class="sd-form-control" placeholder="Enter your email.">-->
+    <!--</label>-->
+    <!--<label>-->
+      <!--Content:-->
+      <!--<textarea [(ngModel)]="content"-->
+                <!--class="sd-form-control" placeholder="Content here."></textarea>-->
+    <!--</label>-->
+    <!--<div class="form-submit">-->
+      <!--<button type="submit">Submit</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</form>-->
+
+<!--<div class="form-value">-->
+  <!--Form value:-->
+  <!--<pre>-->
+    <!--{{contactForm.value | json}}-->
+  <!--</pre>-->
+  <!--<p>-->
+    <!--Status: {{contactForm.status}}-->
+  <!--</p>-->
+  <!--<p>-->
+    <!--Valid: {{contactForm.valid}}-->
+  <!--</p>-->
+  <!--<p>Submit then open console to see full form.</p>-->
+<!--</div>-->
+
+<div class="container">
+  <h3>Employee Forms</h3>
+  <form #form="ngForm" novalidate (submit)="submitForm(form)">
+
+    <div class="form-group">
+      <label class="control-label">First Name</label>
+      <input name="firstName" [(ngModel)]="model.firstName"
+             type="text"
+             class="form-control"
+             placeholder="First Name"
+             required>
+      <div class="alert alert-danger">
+        First name is required, and must be at least 3 characters.
+      </div>
+    </div>
+
+    <!--<div class="form-group">-->
+      <!--<label>Last Name</label>-->
+      <!--<input #lastName="ngModel" type="text"-->
+             <!--class="form-control"-->
+             <!--placeholder="Last Name"-->
+             <!--required-->
+             <!--name="lastName" [(ngModel)]="model.lastName">-->
+      <!--<div class="alert alert-danger"-->
+           <!--*ngIf="firstName.invalid && firstName.touched">-->
+        <!--Last name is required, and must be at least 3 characters.-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="checkbox">-->
+      <!--<label>-->
+        <!--<input type="checkbox"-->
+               <!--name="is-full-time"-->
+               <!--[(ngModel)]="model.isFullTime">Full Time Employee-->
+      <!--</label>-->
+    <!--</div>-->
+
+    <!--<label>Payment Type</label>-->
+    <!--<div class="radio">-->
+      <!--<label>-->
+        <!--<input type="radio" name="paymentType"-->
+               <!--[(ngModel)]="model.paymentType"-->
+               <!--value="w2" checked>W2-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div class="radio">-->
+      <!--<label>-->
+        <!--<input type="radio" name="paymentType"-->
+               <!--[(ngModel)]="model.paymentType"-->
+               <!--value="1099">1099-->
+      <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="form-group"-->
+         <!--[class.has-error]="hasPrimaryLanguageError">-->
+      <!--<label class="control-label">Primary Language</label>-->
+      <!--<select class="form-control"-->
+              <!--name="primaryLanguage"-->
+              <!--#primaryLanguage-->
+              <!--(blur)="validatePrimaryLanguage(primaryLanguage.value)"-->
+              <!--(change)="validatePrimaryLanguage(primaryLanguage.value)"-->
+              <!--[(ngModel)]="model.primaryLanguage">-->
+        <!--<option value="default">Select a Language...</option>-->
+        <!--<option *ngFor="let lang of languages">-->
+          <!--{{ lang }}-->
+        <!--</option>-->
+      <!--</select>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label>Familiarity</label>-->
+      <!--<div class="btn-group">-->
+        <!--<label class="btn btn-primary"-->
+               <!--btnRadio="0"-->
+               <!--name="familiarityLevel" [(ngModel)]="familiarityLevel">-->
+          <!--Low-->
+        <!--</label>-->
+        <!--<label class="btn btn-primary"-->
+               <!--btnRadio="1"-->
+               <!--name="familiarityLevel" [(ngModel)]="familiarityLevel">-->
+          <!--Medium-->
+        <!--</label>-->
+        <!--<label class="btn btn-primary"-->
+               <!--btnRadio="2"-->
+               <!--name="familiarityLevel" [(ngModel)]="familiarityLevel">-->
+          <!--High-->
+        <!--</label>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;<h4>{{familiarityLevel}}</h4>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div class="form-group" style="display: inline-block;">-->
+      <!--<label>Date Hired</label>-->
+      <!--<datepicker name="startDate" [(ngModel)]="startDate"-->
+                  <!--[startingDay]="1"-->
+                  <!--[minDate]="minDate"-->
+                  <!--[datepickerMode]="'day'"-->
+                  <!--[showWeeks]="false">-->
+      <!--</datepicker>-->
+      <!--&lt;!&ndash;<h4>{{startDate}}</h4>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label>Working Hour Start</label>-->
+      <!--<timepicker name="startTime" [(ngModel)]="startTime"-->
+                  <!--[minuteStep]="15">-->
+      <!--</timepicker>-->
+      <!--&lt;!&ndash;<h4>{{startTime}}</h4>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+    <!--&lt;!&ndash;<button type="button" class="btn btn-primary"&ndash;&gt;-->
+    <!--&lt;!&ndash;btnCheckbox&ndash;&gt;-->
+    <!--&lt;!&ndash;btnCheckboxTrue="1" btnCheckboxFalse="0"&ndash;&gt;-->
+    <!--&lt;!&ndash;name="onOffSwitch" [(ngModel)]="onOffSwitch">&ndash;&gt;-->
+    <!--&lt;!&ndash;On / Off&ndash;&gt;-->
+    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h4>{{onOffSwitch}}</h4>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<div class="form-group">-->
+      <!--<label>On Project:</label>-->
+      <!--<br>-->
+      <!--<button type="button"-->
+              <!--class="btn" [class.btn-primary]="onOffSwitch === 'On'"-->
+              <!--btnCheckbox-->
+              <!--btnCheckboxTrue="On" btnCheckboxFalse="Off"-->
+              <!--name="onOffSwitch" [(ngModel)]="onOffSwitch">-->
+        <!--{{onOffSwitch}}-->
+      <!--</button>-->
+      <!--&lt;!&ndash;<h4>{{onOffSwitch}}</h4>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label>Skill Rating:</label>-->
+      <!--<rating name="skillRating" [(ngModel)]="skillRating"-->
+              <!--max="10"-->
+              <!--(onHover)="ratingHover($event)"-->
+              <!--(onLeave)="ratingLeave($event)"-->
+              <!--[stateOn]="'glyphicon-check'"-->
+              <!--[stateOff]="'glyphicon-unchecked'">-->
+      <!--</rating>-->
+      <!--&lt;!&ndash;<h4>{{skillRating}}</h4>&ndash;&gt;-->
+    <!--</div>-->
+
+    <button class="btn btn-primary"
+            [disabled]="form.invalid"
+            type="submit">
+      OK
+    </button>
+  </form>
+</div>
+
