@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import '../../public/css/styles.css';
+import '../../public/css/forms.css';
 
 @Component({
   selector: 'my-app',

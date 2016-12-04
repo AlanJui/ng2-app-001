@@ -20,6 +20,11 @@ export class HeroFormComponent implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
+    console.log(`Submit is pressed`);
+  }
+
+  newHero(): void {
+    this.model = new Hero(42, '', '');
   }
 
   // TODO: Remove this when we're done
