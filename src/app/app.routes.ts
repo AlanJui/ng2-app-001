@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-// import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
-// import { RepoListComponent } from './github/repo-list/repo-list.component';
-// import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
+import {HomeComponent} from './home/home.component';
+import {HeroComponent} from './hero/hero.component';
+import {AboutComponent} from './about/about.component';
+import {ContactComponent} from './contact/contact.component';
 
 export const rootRouterConfig: Routes = [
   {
@@ -16,6 +14,10 @@ export const rootRouterConfig: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'hero',
+    component: HeroComponent
   },
   {
     path: 'about',
